@@ -1,12 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  creationTimestamp: "2024-02-22T10:50:03Z"
-  generation: 48
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"argoproj.io/v1alpha1","kind":"Application","metadata":{"annotations":{},"creationTimestamp":"2024-02-22T10:50:03Z","generation":48,"name":"pacman","namespace":"argocd","resourceVersion":"34202","uid":"2540abdc-89c8-45ce-aa4a-2387619b6b0c"},"spec":{"destination":{"namespace":"pacman-argo","server":"https://kubernetes.default.svc"},"project":"default","source":{"path":"pacman-app/","repoURL":"https://github.com/arblCTW/pacman-app-argocd","targetRevision":"HEAD"},"syncPolicy":{"automated":{"prune":true},"syncOptions":["CreateNamespace=true","Replace=true"]}},"status":{"controllerNamespace":"argocd","health":{"status":"Healthy"},"history":[{"deployStartedAt":"2024-02-22T10:53:15Z","deployedAt":"2024-02-22T10:53:15Z","id":0,"revision":"047b1b4006e32e95cfe843dcb993b18197a5b135","source":{"path":"pacman-app/","repoURL":"https://github.com/arblCTW/pacman-app-argocd","targetRevision":"HEAD"}},{"deployStartedAt":"2024-02-22T10:56:43Z","deployedAt":"2024-02-22T10:56:45Z","id":1,"revision":"9d74414e1e72fdbc64bcb599a4f32990b019f8b6","source":{"path":"pacman-app/","repoURL":"https://github.com/arblCTW/pacman-app-argocd","targetRevision":"HEAD"}}],"operationState":{"finishedAt":"2024-02-22T10:56:45Z","message":"successfully synced (all tasks run)","operation":{"initiatedBy":{"username":"admin"},"retry":{},"sync":{"prune":true,"revision":"9d74414e1e72fdbc64bcb599a4f32990b019f8b6","syncOptions":["CreateNamespace=true","Replace=true"],"syncStrategy":{"hook":{}}}},"phase":"Succeeded","startedAt":"2024-02-22T10:56:43Z","syncResult":{"resources":[{"group":"","hookPhase":"Running","kind":"Service","message":"service/pacmanservice replaced","name":"pacmanservice","namespace":"pacman-argo","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"apps","hookPhase":"Running","kind":"Deployment","message":"deployment.apps/pacman replaced","name":"pacman","namespace":"pacman-argo","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"apps","hookPhase":"Running","kind":"Deployment","message":"deployment.apps/hello replaced","name":"hello","namespace":"default","status":"Synced","syncPhase":"Sync","version":"v1"},{"group":"networking.k8s.io","hookPhase":"Running","kind":"Ingress","message":"ingress.networking.k8s.io/pacman replaced","name":"pacman","namespace":"pacman-argo","status":"Synced","syncPhase":"Sync","version":"v1"}],"revision":"9d74414e1e72fdbc64bcb599a4f32990b019f8b6","source":{"path":"pacman-app/","repoURL":"https://github.com/arblCTW/pacman-app-argocd","targetRevision":"HEAD"}}},"reconciledAt":"2024-02-22T11:03:11Z","resources":[{"health":{"status":"Healthy"},"kind":"Service","name":"pacmanservice","namespace":"pacman-argo","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"hello","namespace":"default","status":"Synced","version":"v1"},{"group":"apps","health":{"status":"Healthy"},"kind":"Deployment","name":"pacman","namespace":"pacman-argo","status":"Synced","version":"v1"},{"group":"networking.k8s.io","health":{"status":"Healthy"},"kind":"Ingress","name":"pacman","namespace":"pacman-argo","status":"Synced","version":"v1"}],"sourceType":"Directory","summary":{"externalURLs":["http://pacman.local/pacman-path"],"images":["ghcr.io/arblctw/pacman:2.0","hashicorp/http-echo"]},"sync":{"comparedTo":{"destination":{"namespace":"pacman-argo","server":"https://kubernetes.default.svc"},"source":{"path":"pacman-app/","repoURL":"https://github.com/arblCTW/pacman-app-argocd","targetRevision":"HEAD"}},"revision":"9d74414e1e72fdbc64bcb599a4f32990b019f8b6","status":"Synced"}}}
+  creationTimestamp: "2024-02-22T11:05:58Z"
+  generation: 82
   name: pacman
   namespace: argocd
-  resourceVersion: "34202"
-  uid: 2540abdc-89c8-45ce-aa4a-2387619b6b0c
+  resourceVersion: "40031"
+  uid: fb067880-74ab-4a28-952c-9a9c8fc3c68f
 spec:
   destination:
     namespace: pacman-argo
@@ -43,8 +46,40 @@ status:
       path: pacman-app/
       repoURL: https://github.com/arblCTW/pacman-app-argocd
       targetRevision: HEAD
+  - deployStartedAt: "2024-02-22T11:06:30Z"
+    deployedAt: "2024-02-22T11:06:31Z"
+    id: 2
+    revision: 9d74414e1e72fdbc64bcb599a4f32990b019f8b6
+    source:
+      path: pacman-app/
+      repoURL: https://github.com/arblCTW/pacman-app-argocd
+      targetRevision: HEAD
+  - deployStartedAt: "2024-02-22T12:33:11Z"
+    deployedAt: "2024-02-22T12:33:12Z"
+    id: 3
+    revision: 50be6ef245778136cf6d628201a011632bc47daf
+    source:
+      path: pacman-app/
+      repoURL: https://github.com/arblCTW/pacman-app-argocd
+      targetRevision: HEAD
+  - deployStartedAt: "2024-02-22T12:36:41Z"
+    deployedAt: "2024-02-22T12:36:42Z"
+    id: 4
+    revision: c9fd8ed6e6239a679b71ff7546288ee9be5a65c0
+    source:
+      path: pacman-app/
+      repoURL: https://github.com/arblCTW/pacman-app-argocd
+      targetRevision: HEAD
+  - deployStartedAt: "2024-02-22T12:40:52Z"
+    deployedAt: "2024-02-22T12:40:53Z"
+    id: 5
+    revision: 5e646468fe4a77a481525612fce02734eb2224f9
+    source:
+      path: pacman-app/
+      repoURL: https://github.com/arblCTW/pacman-app-argocd
+      targetRevision: HEAD
   operationState:
-    finishedAt: "2024-02-22T10:56:45Z"
+    finishedAt: "2024-02-22T12:40:53Z"
     message: successfully synced (all tasks run)
     operation:
       initiatedBy:
@@ -52,21 +87,21 @@ status:
       retry: {}
       sync:
         prune: true
-        revision: 9d74414e1e72fdbc64bcb599a4f32990b019f8b6
+        revision: 5e646468fe4a77a481525612fce02734eb2224f9
         syncOptions:
         - CreateNamespace=true
         - Replace=true
         syncStrategy:
           hook: {}
     phase: Succeeded
-    startedAt: "2024-02-22T10:56:43Z"
+    startedAt: "2024-02-22T12:40:52Z"
     syncResult:
       resources:
       - group: ""
         hookPhase: Running
         kind: Service
-        message: service/pacmanservice replaced
-        name: pacmanservice
+        message: service/pacman replaced
+        name: pacman
         namespace: pacman-argo
         status: Synced
         syncPhase: Sync
@@ -80,15 +115,15 @@ status:
         status: Synced
         syncPhase: Sync
         version: v1
-      - group: apps
+      - group: autoscaling
         hookPhase: Running
-        kind: Deployment
-        message: deployment.apps/hello replaced
-        name: hello
-        namespace: default
+        kind: HorizontalPodAutoscaler
+        message: horizontalpodautoscaler.autoscaling/pacman-hpa replaced
+        name: pacman-hpa
+        namespace: pacman-argo
         status: Synced
         syncPhase: Sync
-        version: v1
+        version: v2
       - group: networking.k8s.io
         hookPhase: Running
         kind: Ingress
@@ -98,26 +133,18 @@ status:
         status: Synced
         syncPhase: Sync
         version: v1
-      revision: 9d74414e1e72fdbc64bcb599a4f32990b019f8b6
+      revision: 5e646468fe4a77a481525612fce02734eb2224f9
       source:
         path: pacman-app/
         repoURL: https://github.com/arblCTW/pacman-app-argocd
         targetRevision: HEAD
-  reconciledAt: "2024-02-22T11:03:11Z"
+  reconciledAt: "2024-02-22T12:40:53Z"
   resources:
   - health:
       status: Healthy
     kind: Service
-    name: pacmanservice
+    name: pacman
     namespace: pacman-argo
-    status: Synced
-    version: v1
-  - group: apps
-    health:
-      status: Healthy
-    kind: Deployment
-    name: hello
-    namespace: default
     status: Synced
     version: v1
   - group: apps
@@ -128,6 +155,16 @@ status:
     namespace: pacman-argo
     status: Synced
     version: v1
+  - group: autoscaling
+    health:
+      message: recent recommendations were higher than current one, applying the highest
+        recent recommendation
+      status: Healthy
+    kind: HorizontalPodAutoscaler
+    name: pacman-hpa
+    namespace: pacman-argo
+    status: OutOfSync
+    version: v2
   - group: networking.k8s.io
     health:
       status: Healthy
@@ -142,7 +179,6 @@ status:
     - http://pacman.local/pacman-path
     images:
     - ghcr.io/arblctw/pacman:2.0
-    - hashicorp/http-echo
   sync:
     comparedTo:
       destination:
@@ -152,5 +188,5 @@ status:
         path: pacman-app/
         repoURL: https://github.com/arblCTW/pacman-app-argocd
         targetRevision: HEAD
-    revision: 9d74414e1e72fdbc64bcb599a4f32990b019f8b6
-    status: Synced
+    revision: 5e646468fe4a77a481525612fce02734eb2224f9
+    status: OutOfSync
