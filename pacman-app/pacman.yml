@@ -5,7 +5,6 @@ metadata:
   labels:
     app: pacman
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: pacman
